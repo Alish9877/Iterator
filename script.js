@@ -193,7 +193,10 @@ Hint: Use the String.prototype.split() method to separate the first and last
 // return `${people.split[1]} ${people.split[0]}`
 // })
 
-let firstLast = [];
+let firstLast = people.map (person => {
+  const [last , first] = person.split(',')
+  return `${first} ${last}`
+})
 
 
 
@@ -254,13 +257,13 @@ a specific ID 823423 from an array of comment objects.
 - Assign the found comment object to the variable 'commentById'.
 */
 
-let commentById = {};
+let commentById = comments.find (comments => comments.id === 823423 )
 
 // Complete the exercise in the space below:
 
 // Check your work:
 console.log('Exercise 8 my result: ', commentById);
-console.log('Exercise 8 correct result: ', { text: 'Super good', id: 823423 });
+
 
 
 /*
@@ -272,10 +275,9 @@ of comment objects.
 - Store the index in the variable 'idx'.
 */
 
-let idx = null;
+let idx = comments.findIndex (comments => comments.id === 823423 )
 
 // Complete the exercise in the space below:
 
 // Check your work:
 console.log('Exercise 9 my result: ', idx);
-console.log('Exercise 9 correct result: ', 3);
